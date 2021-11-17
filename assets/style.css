@@ -1,0 +1,46 @@
+.global {
+    background-color: rgba(13, 220, 235, 0.8);
+    border-radius: 3%;
+}
+
+.globalRobot {
+    background-color: rgb(255, 107, 188, 0.8);
+    border-radius: 3%;
+}
+
+/* .selectedWeapon {
+    background-color: rgba(182, 199, 206, 0.8);
+}
+
+.choix {
+    background-color: rgba(182, 199, 206, 0.8);
+} */
+
+/* .robotChoice {
+    background-color: rgba(182, 199, 206, 0.8);
+}
+
+.robotWeapon {
+    background-color: rgba(182, 199, 206, 0.8);
+} */
+body {
+    background-image: url(../assets/img/squid3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 250vh;
+    background-size: 100vw;
+        
+}
+
+h1 {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.result {
+    background-color: rgba(182, 199, 206, 0.8);
+}
+
+.scoreUser {
+    font-size: 3rem;
+    font-weight: bold;
+}
