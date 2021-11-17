@@ -26,10 +26,7 @@
 body {
     background-image: url(../assets/img/squid3.png);
     background-repeat: no-repeat;
-    background-size: cover;
-    background-size: 250vh;
-    background-size: 100vw;
-        
+    background-size: cover;        
 }
 
 h1 {
