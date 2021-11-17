@@ -6,19 +6,17 @@ let fight = document.getElementById("fight")
 let robot = document.getElementById("robot")
 let myResult = document.getElementById("result")
 let selectedWeapon = document.getElementById("selectedWeapon")
-let myReload = document.getElementById("reload")
 let img = document.getElementById("img")
 let img2 = document.getElementById("img2")
+let img3 = document.getElementById("img3")
 let divImg = document.getElementById("divImg")
+let myButton = document.getElementById("myButton")
 let scoreUser = 0
 let scoreRobot = 0
 let selected = ""
 fight.disabled = true
 
-
 const weapon = ["Rond", "Triangle", "Carre"]
-
-
 
 //**********************Fonction Random****************************************
 
@@ -28,11 +26,9 @@ function randomWeapon(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
   };
 
+ //**************************************************************************** 
 
-  //**************************************************************************** 
-
-
-//*************Choix utilisateur et bouton combat/comparaison*************************************************
+//*************Choix utilisateur*************************************************
 
 choice.addEventListener("click", (e) => {
     if (e.target.nodeName == "BUTTON") {
@@ -44,19 +40,38 @@ choice.addEventListener("click", (e) => {
                 scissors.disabled = true
                 fight.disabled = false
                 selectedWeapon.innerHTML = "Vous avez choisi : " + selected
-                selectedWeapon.className = "fw-bold fs-5 h5 d-block text-center"
-                
-        
+                selectedWeapon.className = "fw-bold fs-5 h5 d-block text-center text-white"
+                myButton.className = "d-none"
+
+                if (selected == "Rond"){
+                img3.src = "assets/img/rondremove.png"
+                img3.className = "d-block"
+                }
+                if (selected == "Carre"){
+                    img3.src = "assets/img/carreremove.png"
+                    img3.className = "d-block"
+                }
+                if (selected == "Triangle"){
+                    img3.src = "assets/img/triangleremove.png"
+                    img3.className = "d-block"
+                }
+
     }
 })
+//********************************************************************************
+
+//**************************bouton combat et comparaisons*************************
 
 fight.addEventListener("click", () => {
+
     let weaponRandom =  weapon[randomWeapon(0, weapon.length)]
     console.log("CPU's Choice : " + weaponRandom)
     fight.disabled = true
 
     robot.innerHTML = "Mr Robot a choisi : " + weaponRandom
-    robot.className = "robotWeapon m-3 fs-5 h3 d-block fw-bold text-center"
+    robot.className = "robotWeapon m-3 fs-5 h3 d-block fw-bold text-center text-white"
+    myResult.className = "result fs-1 fw-bold text-center mt-4 d-block h2"
+
     if (weaponRandom == "Carre") {
         img.src = "assets/img/carreremove.png"
     }
@@ -66,11 +81,15 @@ fight.addEventListener("click", () => {
     if (weaponRandom == "Triangle") {
         img.src = "assets/img/triangleremove.png"
     }
-    myResult.className = "result fs-1 fw-bold text-center mt-4 d-block h2"         
+
 
     if (selected == weaponRandom){
         myResult.innerHTML = "Match nul"
+        img2.src = "assets/img/nullremove.png"
+        img2.className = "d-block"
+        divImg.className = "d-flex justify-content-center d-block"
     }
+
     if (selected == "Carre" && weaponRandom == "Rond"){
         myResult.innerHTML = "Le rond bat le carré, c'est perdu!"
         img2.src = "assets/img/perdu.png"
@@ -119,13 +138,11 @@ fight.addEventListener("click", () => {
         scoreRobot++
         document.getElementById("scoreRobot").innerHTML = "Score Mr Robot  " + scoreRobot
     }
-
-    weaponRandom =""
-                
+     weaponRandom =""
 })
-
-
 // *****************************************************************************
+
+//*****************bouton rejouer***********************************************
 
 function reload(){
     fight.disabled = true
@@ -139,6 +156,8 @@ function reload(){
     selectedWeapon.className = "d-none"
     img.src =""
     img2.src =""
-    
+    img3.src = ""
+    myButton.className = "d-flex row m-auto text-center d-block"
+    divImg.className = "d-flex justify-content-center d-none"
 }
-
+//******************************************************************************

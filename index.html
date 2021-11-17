@@ -14,70 +14,84 @@
 
 <body>
 
-    <h1 class="d-flex justify-content-center mt-3 fw-bold m-auto">Shifumi</h1>
+    <h1 class="d-flex justify-content-center mt-3 fw-bold m-auto text-white">Shifumi</h1>
 
-    <button id="reload" onclick="reload()" class="rounded m-5 h3">Rejouer</button>
+    <button id="reload" onclick="reload()" class="selection rounded m-5 h3">Rejouer</button>
 
-    <div class="row m-auto">
-        <div id="scoreUser" class="col-lg-6 col-6 text-center h3 text-white"></div>
-        <div id="scoreRobot" class="col-lg-6 col-6 text-center h3 text-white"></div>
+    <div class="row m-auto d-flex justify-content-between">
+        <div id="scoreUser" class="scoreUser col-lg-5 text-center h3 text-white"></div>
+        <div id="scoreRobot" class="scoreRobot col-lg-5 text-center h3 text-white"></div>
     </div>
 
     <div class="row m-auto">
 
         <div class="row justify-content-between m-auto">
 
-            <div id="choice" class=" global col-lg-5 col-12">
+            <div id="choice" class=" global col-lg-5 col-12 border border-white">
+
                 <div class="userChoice text-center">
-                    <h2 class="fw-bold fs-1">Choix des armes</h2>
+                    <h2 class="fw-bold fs-1 text-white">Choix des armes</h2>
                 </div>
+
                 <div class="selectedWeapon">
                     <p id="selectedWeapon" class="d-none"></p>
                 </div>
-                <div class="choix row m-auto text-center">
+
+                <div class="d-flex justify-content-center text-center">
+                    <img src="" id="img3" class="d-none">
+                </div>
+
+                <div class="choix row m-auto text-center" id="myButton">
+
                     <div class="col-4 col-lg-4">
                         <img src="assets/img/rondremove.png" height="100px" width="100px" ><br />
-                        <button value="Rond" id="stone" class="rounded m-3 fs-3 h5 col">1-Rond</button>
+                        <button value="Rond" id="stone" class="selection rounded m-3 fs-3 h5 col">1-Rond</button>
                     </div>
 
                     <div class="col-4 col-lg-4">
                         <img src="assets/img/triangleremove.png" height="100px" width="100px">
-                        <button value="Triangle" id="paper" class="rounded m-3 col fs-3 h5">2-Triangle</button>
+                        <button value="Triangle" id="paper" class="selection rounded m-3 col fs-3 h5">2-Triangle</button>
                     </div>
 
 
                     <div class="col-4 col-lg-4">
                         <img src="assets/img/carreremove.png" height="100px" width="100px" class="">
-                        <button value="Carre" id="scissors" class="rounded m-3 col fs-3 h5">3-Carre</button>
+                        <button value="Carre" id="scissors" class="selection rounded m-3 col fs-3 h5">3-Carre</button>
                     </div>
+
                 </div>
 
             </div>
 
-            <div class="globalRobot col-lg-5 col-12">
+            <div class="globalRobot col-lg-5 col-12 border border-white">
 
-                <h2 class="robotChoice fw-bold fs-1 text-center"> Choix du Robot</h2>
+                <h2 class="robotChoice fw-bold fs-1 text-center text-white"> Choix du Robot</h2>
+
                 <p id="robot" class="d-none"></p>
+
                 <div class="text-center">
                     <img src="" id="img">
                 </div>
+                
             </div>
 
         </div>
+
         <div class="d-flex justify-content-center">
-            <button id="fight" class="fight fs-1 rounded mt-2 h3">Combat</button>
+            <button id="fight" class="selection fight fs-1 rounded mt-2 h3">Combat</button>
         </div>
         
         <div class="d-flex justify-content-center d-none" id="divImg">
-            <img src="" id="img2" height="100px" width="120px" class="d-none">
+            <img src="" id="img2" height="160px" width="180px" class="d-none">
         </div>
+
         <p id="result" class="result d-none"></p>
-        
         
     </div>
 
 
     <script src="assets/script.js"></script>
+
 </body>
 
 </html>
