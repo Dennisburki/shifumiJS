@@ -8,3 +8,5 @@ Le rond bat le carré.
 Le traingle bat le rond.
 
 Le carré bat le triangle.
+
+Utilisation de Bootswatch pour le thème global.
